@@ -21,30 +21,37 @@ export const PaymentCard = ({
   onPayLater: (payment: Payment) => void;
 }) => {
   const dueDate = new Date(payment.dueDate);
-  const daysLeft = (dueDate.getTime() - Date.now()) / (1000 * 60 * 60 * 24);
+  const now = new Date();
+
+  
+  now.setHours(0, 0, 0, 0);
+  dueDate.setHours(0, 0, 0, 0);
+
+  const diffTime = dueDate.getTime() - now.getTime();
+  const daysLeft = Math.round(diffTime / (1000 * 60 * 60 * 24));
   const isDueSoon = daysLeft <= 3;
-  const backgroundColor =  Colors.white;
+  const backgroundColor = Colors.white;
 
+  let dueText = '';
+  if (daysLeft < 0) {
+    dueText = `Due ${Math.abs(daysLeft)} day${Math.abs(daysLeft) > 1 ? 's' : ''} ago`;
+  } else if (daysLeft === 0) {
+    dueText = 'Due Today';
+  } else if (daysLeft <= 3) {
+    dueText = `Due in ${daysLeft} day${daysLeft > 1 ? 's' : ''}`;
+  } else {
+    dueText = `Due: ${dueDate.toLocaleDateString('en-US', {
+      month: 'short',
+      day: '2-digit',
+      year: 'numeric',
+    })}`;
+  }
 
-let dueText = "";
-if (daysLeft < 0) {
-  dueText = `Due ${Math.abs(daysLeft)} day${Math.abs(daysLeft) > 1 ? "s" : ""} ago`;
-} else if (daysLeft === 0) {
-  dueText = "Due Today";
-} else if (daysLeft <= 3) {
-  dueText = `Due in ${daysLeft} day${daysLeft > 1 ? "s" : ""}`;
-} else {
-  dueText = `Due: ${dueDate.toLocaleDateString("en-US", {
-    month: "short",
-    day: "2-digit",
-    year: "numeric",
-  })}`;
-}
   return (
     <MotiView
       from={{ opacity: 0, translateY: 10 }}
       animate={{ opacity: 1, translateY: 0 }}
-      transition={{ type: "timing", duration: 350 }}
+      transition={{ type: 'timing', duration: 350 }}
       style={[styles.card, { backgroundColor }]}
     >
       <View>
@@ -66,10 +73,10 @@ if (daysLeft < 0) {
           <MotiView
             from={{ scale: 1 }}
             animate={{ scale: [1, 1.05, 1] }}
-            transition={{ loop: true, type: "timing", duration: 100 }}
+            transition={{ loop: true, type: 'timing', duration: 1000 }}
             style={styles.badge}
           >
-            <Text style={styles.badgeText}> {dueText}</Text>
+            <Text style={styles.badgeText}>{dueText}</Text>
           </MotiView>
         )}
 
@@ -77,10 +84,7 @@ if (daysLeft < 0) {
           <Pressable style={styles.payNow} onPress={() => onPayNow(payment)}>
             <Text style={styles.payNowText}>Pay Now</Text>
           </Pressable>
-          <Pressable
-            style={styles.payLater}
-            onPress={() => onPayLater(payment)}  
-          >
+          <Pressable style={styles.payLater} onPress={() => onPayLater(payment)}>
             <Text style={styles.payLaterText}>Later</Text>
           </Pressable>
         </View>
@@ -88,7 +92,6 @@ if (daysLeft < 0) {
     </MotiView>
   );
 };
-
 
 const styles = StyleSheet.create({
   card: {
