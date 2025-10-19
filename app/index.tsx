@@ -1,6 +1,5 @@
- import React, { useState, useMemo } from "react";
+import { useState, useMemo } from "react";
 import {
-  View,
   FlatList,
   RefreshControl,
   StyleSheet,

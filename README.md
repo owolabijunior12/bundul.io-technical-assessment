@@ -46,10 +46,10 @@ npm install
 yarn install
 ```
 
-3. **Start the Expo development server**
+3. **Start the Expo**
 
 ```bash
-npm start
+npx expo start 
 # or
 yarn start
 ```

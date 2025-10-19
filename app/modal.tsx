@@ -1,4 +1,3 @@
-import React from "react";
 import { View, Text, StyleSheet, Pressable } from "react-native";
 import { useRouter } from "expo-router";
 import { Colors } from "@/constants/theme";
@@ -8,7 +7,7 @@ export default function ModalScreen() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Payment Successful 💸</Text>
+      <Text style={styles.title}>Payment Successful </Text>
       <Text style={styles.text}>
         This is a dummy modal. You can close it to return.
       </Text>

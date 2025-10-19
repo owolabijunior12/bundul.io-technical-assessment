@@ -1,4 +1,3 @@
- import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { Colors } from "@/constants/theme";
 
@@ -15,7 +14,7 @@ export function EmptyState() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,                 // Center vertically
+    flex: 1,               
     justifyContent: "center",
     alignItems: "center",
     paddingHorizontal: 24,

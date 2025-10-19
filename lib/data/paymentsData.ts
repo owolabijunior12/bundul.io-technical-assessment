@@ -1,8 +1,15 @@
-export const paymentsData = [
-  { id: 1, service: 'Netflix', amount: 14.99, dueDate: '2025-10-19' },
-  { id: 2, service: 'Apple One', amount: 29.99, dueDate: '2025-11-01' },
-  { id: 3, service: 'Spotify', amount: 9.99, dueDate: '2025-10-18' },
-  { id: 4, service: 'Adobe Creative Cloud', amount: 52.99, dueDate: '2025-10-25' },
-  { id: 5, service: 'aAmazon', amount: 9.99, dueDate: '2025-10-14' },
-  { id: 6, service: 'Amex', amount: 9.99, dueDate: '2025-10-20' },
+ export const paymentsData = [
+  { id: 1, service: "Spotify", amount: 9.99, dueDate: "2025-10-16" }, 
+  { id: 2, service: "Microsoft 365", amount: 69.99, dueDate: "2025-10-17" }, 
+  { id: 3, service: "Amazon Prime", amount: 12.99, dueDate: "2025-10-18" }, 
+  { id: 4, service: "Canva Pro", amount: 24.99, dueDate: "2025-10-19" }, 
+  { id: 5, service: "Figma Professional", amount: 45.00, dueDate: "2025-10-20" }, 
+  { id: 6, service: "ChatGPT Plus", amount: 20.00, dueDate: "2025-10-21" }, 
+  { id: 7, service: "YouTube Premium", amount: 11.99, dueDate: "2025-10-22" }, 
+  { id: 8, service: "Dropbox Plus", amount: 19.99, dueDate: "2025-10-16" },
+  { id: 9, service: "Zoom Pro", amount: 14.99, dueDate: "2025-10-17" },
+  { id: 10, service: "Slack Premium", amount: 12.49, dueDate: "2025-10-18" },
+  { id: 11, service: "Coursera Plus", amount: 59.00, dueDate: "2025-10-19" },
+  { id: 12, service: "Disney+", amount: 10.99, dueDate: "2025-10-20" },
+  { id: 13, service: "GitHub Pro", amount: 10.00, dueDate: "2025-10-21" },
 ];
