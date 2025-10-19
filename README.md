@@ -1,50 +1,108 @@
-# Welcome to your Expo app 👋
+ 
+# Bundul Assessment - Due Payments App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This is a **React Native** project built with **Expo** for a technical interview assessment.  
+The app displays a list of upcoming payments, highlights payments due soon, and allows users to **Pay Now** or **Pay Later**.  
 
-## Get started
+- 
 
-1. Install dependencies
+## Features
 
-   ```bash
-   npm install
-   ```
+- List of upcoming payments with due dates.
+- Highlights payments due soon (within 3 days).
+- Modal feedback for payment actions.
+- Empty state when no payments are available.
+- Animated UI with `Moti` and gradient backgrounds.
+- Status bar matches the header color.
+- Fully built with **TypeScript** and **Expo Router**.
 
-2. Start the app
+ 
 
-   ```bash
-   npx expo start
-   ```
+## Prerequisites
 
-In the output, you'll find options to open the app in a
+- Node.js >= 18  
+- npm >= 9 or yarn >= 1.22  
+- Expo CLI (`npm install -g expo-cli`)  
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+Optional for simulators:  
+- Android Studio or Xcode
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+---
 
-## Get a fresh project
+## Setup Instructions
 
-When you're ready, run:
+1. **Clone the repository**
 
 ```bash
-npm run reset-project
+git clone <repository_url>
+cd bundul-assessment
+````
+
+2. **Install dependencies**
+
+```bash
+npm install
+# or
+yarn install
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+3. **Start the Expo development server**
 
-## Learn more
+```bash
+npm start
+# or
+yarn start
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+4. **Run the app**
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+* Android: Scan QR code with **Expo Go** or run on emulator.
+* iOS: Scan QR code with **Expo Go** or run on simulator.
+* Web: Press `w` in terminal to open in browser.
 
-## Join the community
+---
 
-Join our community of developers creating universal apps.
+## Project Structure
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+```
+bundul-assessment/
+├─ app/                  # Expo Router pages
+├─ components/           # Reusable components (Header, PaymentCard, EmptyState, PaymentModal)
+├─ hooks/                # Custom hooks (usePayments)
+├─ constants/            # Theme and color definitions
+├─ utils/                # Utility functions (formatCurrency)
+├─ tsconfig.json         # TypeScript configuration
+└─ README.md             # This file
+```
+
+---
+
+## How to Review
+
+1. Start the app using Expo.
+2. Check that the **header and status bar** display the correct blue color.
+3. Verify the **payments list** sorts correctly by due date.
+4. Test **Pay Now** and **Pay Later** modals.
+5. Confirm the **empty state** displays when no payments are available.
+
+---
+
+## Dependencies
+
+* `react-native`
+* `expo`
+* `expo-linear-gradient`
+* `moti`
+* `lottie-react-native`
+* `react-native-safe-area-context`
+
+---
+
+## Notes
+
+* Payments are currently loaded from a **mock dataset**. 
+* Modals handle both "Pay Now" and "Pay Later" actions with appropriate feedback.
+
+---
+
+ 
