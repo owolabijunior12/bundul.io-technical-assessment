@@ -39,7 +39,7 @@ export const PaymentCard = ({
   } else if (daysLeft === 0) {
     dueText = 'Due Today';
   } else if (daysLeft <= 3) {
-    dueText = `Due in ${daysLeft} day${daysLeft > 1 ? 's' : ''}`;
+    dueText = `Due Soon`;
   } else {
     dueText = `Due: ${dueDate.toLocaleDateString('en-US', {
       month: 'short',
